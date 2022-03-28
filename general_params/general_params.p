@@ -1,11 +1,11 @@
 (dp0
 S'results_dir'
 p1
-S'/Users/rchaudhuri/data/2019_03_hd/analyses/'
+S'/Users/stashtomonaga/workspace/ncu/suntory/rchaudhuri/data/analyses/'
 p2
 sS'processed_data_dir'
 p3
-S'/Users/rchaudhuri/data/2019_03_hd/processed/'
+S'/Users/stashtomonaga/workspace/ncu/suntory/rchaudhuri/data/processed/'
 p4
 sS'cols'
 p5
@@ -42,10 +42,10 @@ F0.0784
 tp16
 ssS'raw_data_dir'
 p17
-S'/Users/rchaudhuri/data/2019_03_hd/raw_data/'
+S'/Users/stashtomonaga/workspace/ncu/suntory/rchaudhuri/data/raw/'
 p18
 sS'kernel_rates_dir'
 p19
-S'/Users/rchaudhuri/data/2019_03_hd/analyses/2019_03_kernel_rates/'
+S'/Users/stashtomonaga/workspace/ncu/suntory/rchaudhuri/data/analyses/2019_03_kernel_rates/'
 p20
 s.

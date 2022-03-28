@@ -3,15 +3,16 @@ Create a few shared parameters and save them in a file.
 '''
 
 import sys, os
-gen_fn_dir = os.path.abspath('..') + '/shared_scripts'
-sys.path.append(gen_fn_dir)
+# gen_fn_dir = os.path.abspath('..') + '/shared_scripts'
+# sys.path.append(gen_fn_dir)
+sys.path.insert(0, os.path.abspath( os.path.join(os.path.dirname(__file__), '../shared_scripts')))
 from general_file_fns import save_pickle_file
 
 param_dict = {}
 # Some commonly used paths
-base_dir = '/Users/rchaudhuri/data/2019_03_hd/'
+base_dir = '/Users/stashtomonaga/workspace/ncu/suntory/rchaudhuri/data/'
 # Location where Peyrache et al data is unzipped
-param_dict['raw_data_dir'] = base_dir + 'raw_data/'
+param_dict['raw_data_dir'] = base_dir + 'raw/'
 
 # Contains the Peyrache et al data accumulated into single files.
 # These files are created by read_in_data/preprocess_raw_data.py. Note that

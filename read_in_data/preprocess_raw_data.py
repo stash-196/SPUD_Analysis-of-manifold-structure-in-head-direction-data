@@ -13,8 +13,11 @@ import numpy.linalg as la
 import sys, os 
 import time, datetime
 
-gen_fn_dir = os.path.abspath('..') + '/shared_scripts'
-sys.path.append(gen_fn_dir)
+# This is to add "shared_scripts" to python path, based on relative path
+# gen_fn_dir = os.path.abspath('..') + '/shared_scripts'
+# sys.path.append(gen_fn_dir)
+# It can be substituted with this
+sys.path.insert(0, os.path.abspath( os.path.join(os.path.dirname(__file__), '../shared_scripts')))
 
 import general_file_fns as gff
 import data_read_fns as drf
