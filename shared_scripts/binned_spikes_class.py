@@ -7,12 +7,14 @@ from __future__ import division
 import numpy as np
 import sys, os
 
-gen_fn_dir = os.path.abspath('..') + '/shared_scripts'
+# gen_fn_dir = os.path.abspath('..') + '/shared_scripts'
+project_dir = os.path.abspath( os.path.join(os.path.dirname(__file__), '..'))
+gen_fn_dir = os.path.join(project_dir, 'shared_scripts')
 sys.path.append(gen_fn_dir)
 
 from general_file_fns import load_pickle_file, save_pickle_file
 
-gen_params = load_pickle_file('../general_params/general_params.p')
+gen_params = load_pickle_file(os.path.join(project_dir, 'general_params/general_params.p'))
 
 # with open(os.path.expanduser("~/path_to_hd_data.txt")) as pathfile:
 #     datadir = pathfile.readline()
@@ -46,7 +48,7 @@ class spike_counts:
         self.params = params
         # anat_region is either 'all' or a specific area
         if anat_region is not 'all':
-            area_info = load_pickle_file('../general_params/area_shank_info.p')
+            area_info = load_pickle_file(os.path.join(project_dir, 'general_params/area_shank_info.p'))
             relevant_shanks = area_info[session_id][anat_region]
             relevant_cells = [x for x in self.cell_ids if x[0] in relevant_shanks]
             self.cell_ids = relevant_cells

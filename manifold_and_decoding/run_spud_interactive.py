@@ -15,11 +15,13 @@ sd=int((time.time()%1)*(2**31))
 np.random.seed(sd)
 curr_date=datetime.datetime.now().strftime('%Y_%m_%d')+'_'
 
-gen_fn_dir = os.path.abspath('..') + '/shared_scripts'
+# gen_fn_dir = os.path.abspath('..') + '/shared_scripts'
+project_dir = os.path.abspath( os.path.join(os.path.dirname(__file__), '..'))
+gen_fn_dir = os.path.join(project_dir, 'shared_scripts')
 sys.path.append(gen_fn_dir)
 
 import general_file_fns as gff
-gen_params = gff.load_pickle_file('../general_params/general_params.p')
+gen_params = gff.load_pickle_file(os.path.join(project_dir, 'general_params/general_params.p'))
 
 from binned_spikes_class import spike_counts
 import manifold_fit_and_decode_fns as mff
@@ -117,7 +119,7 @@ fit_results['tt'], fit_results['curve'] = fhf.get_curve_from_knots(
     fit_results['loop_final_knots'], 'eq_vel')
 
 fit_results['fit_err'] = fitter.saved_knots[0]['err']
-print 'Time ', time.time()-t0
+print('Time ', time.time()-t0)
 
 i0 = 0; i1 = 1; i2 = 2
 fig = plt.figure(figsize=(9,9))
